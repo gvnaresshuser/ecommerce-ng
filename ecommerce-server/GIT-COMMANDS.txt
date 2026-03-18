@@ -1,0 +1,247 @@
+
+https://github.com/
+gvnaresshuser
+ecommerce-ng
+create a new repo:ecommerce-ng
+
+echo "# ecommerce-ng" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/gvnaresshuser/ecommerce-ng.git
+git push -u origin main
+
+
+
+git branch -M main
+git remote add origin https://github.com/gvnaresshuser/ecommerce-ng.git
+git push -u origin main
+
+Done 🎉
+
+Now GitHub will show:
+===================================================================================================
+✅ STEP 1 — Install Vercel CLI
+Open terminal
+npm i -g vercel
+Login
+vercel login
+===================================================================================================
+Microsoft Windows [Version 10.0.26100.6899]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Naresh>npm i -g vercel
+npm warn deprecated tar@7.5.7: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+added 293 packages in 47s
+
+C:\Users\Naresh>vercel login
+> NOTE: The Vercel CLI now collects telemetry regarding usage of the CLI.
+> This information is used to shape the CLI roadmap and prioritize features.
+> You can learn more, including how to opt-out if you'd not like to participate in this program, by visiting the following URL:
+> https://vercel.com/docs/cli/about-telemetry
+>
+  Visit https://vercel.com/oauth/device?user_code=LWTV-FJKZ
+
+  Congratulations! You are now signed in.
+
+  To deploy something, run `vercel`.
+
+  💡 To deploy every commit automatically,
+  connect a Git Repository (vercel.link/git (https://vercel.link/git)).
+
+C:\Users\Naresh>
+===================================================================================================
+visit vercel.com, create and deploy ecommerce-ng
+===================================================================================================
+✅ STEP 2 — Deploy Angular App
+
+E:\ANGULAR-CRASH-COURSE\ecommerceapp>vercel
+🔍  Inspect: https://vercel.com/gocarts-projects-cfc6dde7/ecommerceapp/2SyiqN5Tq2CFUMMFuqcaJL7LWDwt [2s]
+⏳  Preview: https://ecommerceapp-dwhuap3ll-gocarts-projects-cfc6dde7.vercel.app [2s]
+Error: The specified Root Directory "dist\ecommerceapp\browser" does not exist. Please update your Project Settings.
+
+E:\ANGULAR-CRASH-COURSE\ecommerceapp>vercel remove ecommerceapp
+> Found 1 project for removal in gocarts-projects-cfc6dde7 [752ms]
+The following project will be permanently removed, including all its deployments and aliases:
+- ecommerceapp
+> Are you sure? (y/N) y
+> Success! Removed 1 project [611ms]
+- ecommerceapp
+
+E:\ANGULAR-CRASH-COURSE\ecommerceapp>vercel
+❗️  Your Project was either deleted, transferred to a new Team, or you don’t have access to it anymore.
+? Set up and deploy “E:\ANGULAR-CRASH-COURSE\ecommerceapp”? yes
+? Which scope should contain your project? gocart's projects
+? Link to existing project? no
+? What’s your project’s name? ecommerceapp
+? In which directory is your code located? ./
+> Auto-detected Project Settings for Angular
+
+? Want to modify these settings? no
+? Do you want to change additional project settings? no
+🔗  Linked to gocarts-projects-cfc6dde7/ecommerceapp (created .vercel)
+🔍  Inspect: https://vercel.com/gocarts-projects-cfc6dde7/ecommerceapp/2yz4rU2aj9jw6jS9JvBKfWqKScX5 [2s]
+✅  Production: https://ecommerceapp-5b7qtdxig-gocarts-projects-cfc6dde7.vercel.app [33s]
+🔗  Aliased: https://ecommerceapp-zeta-bice.vercel.app [33s]
+📝  Deployed to production. Run `vercel --prod` to overwrite later (https://vercel.link/2F).
+💡  To change the domain or build command, go to https://vercel.com/gocarts-projects-cfc6dde7/ecommerceapp/settings
+
+E:\ANGULAR-CRASH-COURSE\ecommerceapp>
+===================================================================================================
+
+E:\ANGULAR-CRASH-COURSE\ecommerceapp>ng build
+Initial chunk files | Names              |  Raw size | Estimated transfer size
+chunk-CRFCUMSE.js   | -                  | 246.15 kB |                68.04 kB
+styles-JG7EAGFK.css | styles             | 230.85 kB |                22.46 kB
+main-RHK3Z2ZF.js    | main               | 708 bytes |               708 bytes
+
+                    | Initial total      | 477.71 kB |                91.21 kB
+
+Lazy chunk files    | Names              |  Raw size | Estimated transfer size
+chunk-SIPBVRCZ.js   | checkout-component |  84.08 kB |                20.38 kB
+chunk-RD6JJRTF.js   | ecommerceapp       |  35.99 kB |                 8.85 kB
+chunk-SD6LHNMN.js   | orders             |   5.04 kB |                 1.78 kB
+chunk-GN646LPO.js   | -                  | 648 bytes |               648 bytes
+chunk-P7XKTYZG.js   | -                  | 311 bytes |               311 bytes
+chunk-ZEU74TCW.js   | -                  | 311 bytes |               311 bytes
+
+Application bundle generation complete. [53.649 seconds] - 2026-03-18T01:57:00.032Z
+
+▲ [WARNING] Module 'sweetalert2' used by 'src/app/checkout/checkout.component.ts' is not ESM
+
+  CommonJS or AMD dependencies can cause optimization bailouts.
+  For more information see: https://angular.dev/tools/cli/build#configuring-commonjs-dependencies
+
+
+Output location: E:\ANGULAR-CRASH-COURSE\ecommerceapp\dist\ecommerceapp
+
+
+E:\ANGULAR-CRASH-COURSE\ecommerceapp>
+===================================================================================================
+===================================================================================================
+cd E:\ANGULAR-CRASH-COURSE\ecommerce-server
+You must create this file:
+⭐ vercel.json
+---------------------
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@vercel/node",
+            "config": {
+                "includeFiles": [
+                    "dist/**"
+                ]
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "server.js"
+        }
+    ]
+}
+--------------------
+===================================================================================================
+===================================================================================================
+===================================================================================================
+===================================================================================================
+✅ STEP 2 — Deploy Angular App
+
+Go to Angular folder
+✅ STEP 2 — Deploy Angular App
+
+Go to Angular folder
+E:\ANGULAR-CRASH-COURSE>git add .
+warning: in the working copy of 'ecommerce-server/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ecommerce-server/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: adding embedded git repository: ecommerceapp
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> ecommerceapp
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached ecommerceapp
+hint:
+hint: See "git help submodule" for more information.
+
+E:\ANGULAR-CRASH-COURSE>git commit -m "Initial fullstack ecommerce project"
+[master (root-commit) 2f46ec9] Initial fullstack ecommerce project
+ 51 files changed, 2304 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 NOTES.txt
+ create mode 100644 SCREENS/0.png
+ create mode 100644 SCREENS/1.png
+ create mode 100644 SCREENS/10.png
+ create mode 100644 SCREENS/11.png
+ create mode 100644 SCREENS/12.png
+ create mode 100644 SCREENS/13.png
+ create mode 100644 SCREENS/14--dry-run.png
+ create mode 100644 SCREENS/15-Files & Folders in an Angular App.png
+ create mode 100644 SCREENS/16-Angular src Folder Structure.png
+ create mode 100644 SCREENS/17-Angular Component Life Cycle.png
+ create mode 100644 SCREENS/18-Top Angular Interview Questions (Angular 21).png
+ create mode 100644 SCREENS/19-Angular Application Startup Flow (Angular 21).png
+ create mode 100644 SCREENS/2.png
+ create mode 100644 SCREENS/20-Difference Between CSS vs SCSS vs SASS.png
+ create mode 100644 SCREENS/21-Angular-Components.png
+ create mode 100644 SCREENS/22-Angular-DevTools Extension for Chrome.png
+ create mode 100644 SCREENS/23-Zone-js.png
+ create mode 100644 SCREENS/24-How to Run Angular 18 Components in Angular 21 Zoneless Mode.png
+ create mode 100644 SCREENS/25-Signals vs RxJS Observables.png
+ create mode 100644 SCREENS/26-Types of Angular Signals.png
+ create mode 100644 SCREENS/27-Recommended Setup for Angular 21 Zoneless Project.png
+ create mode 100644 SCREENS/28-Angular Forms.png
+ create mode 100644 SCREENS/29-Creating a Component.png
+ create mode 100644 SCREENS/3.png
+ create mode 100644 SCREENS/30-Angular Databinding.png
+ create mode 100644 SCREENS/31-Angular input() - output().png
+ create mode 100644 SCREENS/32-Angular template.png
+ create mode 100644 SCREENS/33-Data Binding.png
+ create mode 100644 SCREENS/34-Event Listeners.png
+ create mode 100644 SCREENS/35-Routing.png
+ create mode 100644 SCREENS/36-Difference Between Component and Page (Angular).png
+ create mode 100644 "SCREENS/37-Angular Routing \342\200\223 Important Terms.png"
+ create mode 100644 SCREENS/38-Angular Services.png
+ create mode 100644 SCREENS/39-Angular Directives.png
+ create mode 100644 SCREENS/4.png
+ create mode 100644 SCREENS/40-Angular Pipes.png
+ create mode 100644 SCREENS/41-todo-code-explanation.png
+ create mode 100644 SCREENS/5.png
+ create mode 100644 SCREENS/6.png
+ create mode 100644 SCREENS/7.png
+ create mode 100644 SCREENS/8.png
+ create mode 100644 SCREENS/9.png
+ create mode 100644 ecommerce-server/.gitignore
+ create mode 100644 ecommerce-server/ORDERS-DATA.txt
+ create mode 100644 ecommerce-server/STEPS.txt
+ create mode 100644 ecommerce-server/package-lock.json
+ create mode 100644 ecommerce-server/package.json
+ create mode 100644 ecommerce-server/server.js
+ create mode 160000 ecommerceapp
+
+E:\ANGULAR-CRASH-COURSE>git branch -M main
+
+E:\ANGULAR-CRASH-COURSE>git remote add origin https://github.com/gvnaresshuser/ecommerce-ng.git
+
+E:\ANGULAR-CRASH-COURSE>git push -u origin main
+Enumerating objects: 54, done.
+Counting objects: 100% (54/54), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (52/52), done.
+Writing objects: 100% (54/54), 22.10 MiB | 1.28 MiB/s, done.
+Total 54 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/gvnaresshuser/ecommerce-ng.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+E:\ANGULAR-CRASH-COURSE>

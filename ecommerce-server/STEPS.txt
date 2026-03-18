@@ -25,6 +25,7 @@ E:\ANGULAR-CRASH-COURSE\ecommerce-server>
 
 npm install express cors pg razorpay
 npm install --save-dev nodemon
+npm install dotenv
 
 create table orders_angular(
  id serial primary key,
@@ -72,8 +73,20 @@ render.com
 google login
 gvnaressh@gmail.com
 
+https://github.com/
+gvnaresshuser
+ecommerce-ng
+
+echo "# ecommerce-ng" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/gvnaresshuser/ecommerce-ng.git
+git push -u origin main
 
 
 
-
-
+git branch -M main
+git remote add origin https://github.com/gvnaresshuser/ecommerce-ng.git
+git push -u origin main
