@@ -55,6 +55,28 @@ E:\ANGULAR-CRASH-COURSE\ecommerce-server>vercel --prod
 
 E:\ANGULAR-CRASH-COURSE\ecommerce-server>
 ===================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+E:\ANGULAR-CRASH-COURSE\ecommerce-server>vercel --prod
+🔍  Inspect: https://vercel.com/gocarts-projects-cfc6dde7/ecommerce-server/DBstuJvt5nmPKGws7DatcYse4k3c [2s]
+✅  Production: https://ecommerce-server-p7ixysqon-gocarts-projects-cfc6dde7.vercel.app [17s]
+🔗  Aliased: https://ecommerce-server-five-eosin.vercel.app [17s]
+
+E:\ANGULAR-CRASH-COURSE\ecommerce-server>vercel --prod
+🔍  Inspect: https://vercel.com/gocarts-projects-cfc6dde7/ecommerce-server/5JcUeYHimvEx4UjSdMH6Khhj8b9Z [2s]
+✅  Production: https://ecommerce-server-9z1h5ws9c-gocarts-projects-cfc6dde7.vercel.app [17s]
+🔗  Aliased: https://ecommerce-server-five-eosin.vercel.app [17s]
+
+E:\ANGULAR-CRASH-COURSE\ecommerce-server>cd ..
+
+E:\ANGULAR-CRASH-COURSE>cd ecommerceapp
+
+E:\ANGULAR-CRASH-COURSE\ecommerceapp>vercel --prod
+🔍  Inspect: https://vercel.com/gocarts-projects-cfc6dde7/ecommerceapp/ENtW6ugdrgx4VJVqDFRurCKMFfgd [5s]
+✅  Production: https://ecommerceapp-ll48qitt6-gocarts-projects-cfc6dde7.vercel.app [20s]
+🔗  Aliased: https://ecommerceapp-zeta-bice.vercel.app [20s]
+
+E:\ANGULAR-CRASH-COURSE\ecommerceapp>
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ✅ STEP 1 — Install Vercel CLI
 Open terminal
 npm i -g vercel

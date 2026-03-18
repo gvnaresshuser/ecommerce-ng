@@ -90,3 +90,18 @@ git push -u origin main
 git branch -M main
 git remote add origin https://github.com/gvnaresshuser/ecommerce-ng.git
 git push -u origin main
+
+
+👉 If you are using Vercel CLI deploy → NO need to push to GitHub first.
+You can directly:
+vercel --prod
+
+Vercel will deploy your local latest code.
+
+
+RAZORPAY:
+========
+google search razorpay dashboard
+Google signin id
+venkatdada369@gmail.com
+Gvnaressh3695

@@ -5,7 +5,7 @@ import pkg from "pg";
 import { createHmac } from "crypto";
 
 import dotenv from "dotenv";
-
+dotenv.config();
 const { Pool } = pkg;
 
 const app = express();
