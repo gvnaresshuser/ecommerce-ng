@@ -1,0 +1,409 @@
+https://youtu.be/k5E2AVpwsko
+https://youtu.be/oUmVFHlwZsI
+https://github.com/AhsanAyaz/angular-in-90ish
+
+Install Node js LTS version first
+node --version
+npm --version
+-----------------
+C:\Users\Naresh>npm --version
+11.7.0
+C:\Users\Naresh>node --version
+v20.19.3
+-----------------
+
+Minimum node version 6.9 is required for running and building angular applications
+
+Install Angular CLI
+npm install -g @angular/cli
+OR for mac
+sudo npm install -g @angular/cli
+--------------------
+C:\Users\Naresh>npm install -g @angular/cli
+added 289 packages in 35s
+--------------------
+Angular Language Service Extension for Visual Code
+--------------------
+ng --version
+--------------------
+C:\Users\Naresh>ng --version
+21.2.2
+--------------------
+ng new --help
+*****************************
+ng new first-ng-app --dry-run
+*****************************
+NO FILES OR FOLDER ARE CREATED 
+Angular CLI will NOT create the project folder
+No files will be generated
+Nothing will be installed
+It will only show you what WOULD happen
+*****************************************************
+ng new first-ng-app --inline-style --inline-template
+*****************************************************
+[CREATES FOLDER WITHOUT ADDITIONAL FILES]
+NO HTML OR SCSS OR CSS FILES WILL BE CREATED...AS WE GAVE OPTION --inline-style --inline-template
+
+-------------------------
+Microsoft Windows [Version 10.0.26100.6899]
+(c) Microsoft Corporation. All rights reserved.
+
+E:\ANGULAR-CRASH-COURSE>ng new first-ng-app --inline-style --inline-template
+√ Which stylesheet system would you like to use? Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss
+          ]
+√ Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
+√ Which AI tools do you want to configure with Angular best practices? https://angular.dev/ai/develop-with-ai None
+CREATE first-ng-app/.prettierrc (173 bytes)
+CREATE first-ng-app/angular.json (2196 bytes)
+CREATE first-ng-app/package.json (787 bytes)
+CREATE first-ng-app/README.md (1522 bytes)
+CREATE first-ng-app/tsconfig.json (990 bytes)
+CREATE first-ng-app/.editorconfig (331 bytes)
+CREATE first-ng-app/.gitignore (666 bytes)
+CREATE first-ng-app/tsconfig.app.json (444 bytes)
+CREATE first-ng-app/tsconfig.spec.json (456 bytes)
+CREATE first-ng-app/.vscode/extensions.json (134 bytes)
+CREATE first-ng-app/.vscode/launch.json (490 bytes)
+CREATE first-ng-app/.vscode/mcp.json (188 bytes)
+CREATE first-ng-app/.vscode/tasks.json (1020 bytes)
+CREATE first-ng-app/src/main.ts (228 bytes)
+CREATE first-ng-app/src/index.html (309 bytes)
+CREATE first-ng-app/src/styles.scss (81 bytes)
+CREATE first-ng-app/src/app/app.spec.ts (702 bytes)
+CREATE first-ng-app/src/app/app.ts (347 bytes)
+CREATE first-ng-app/src/app/app.config.ts (324 bytes)
+CREATE first-ng-app/src/app/app.routes.ts (80 bytes)
+CREATE first-ng-app/public/favicon.ico (15086 bytes)
+√ Packages installed successfully.
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+    Successfully initialized git.
+
+E:\ANGULAR-CRASH-COURSE>
+-------------------------
+cd first-ng-app
+code .
+
+npm start
+npm build
+npm test
+
+npm start
+----------------------
+
+E:\ANGULAR-CRASH-COURSE>cd first-ng-app
+
+E:\ANGULAR-CRASH-COURSE\first-ng-app>code .
+
+E:\ANGULAR-CRASH-COURSE\first-ng-app>npm start
+
+> first-ng-app@0.0.0 start
+> ng serve
+
+Initial chunk files | Names         | Raw size
+main.js             | main          |  2.48 kB |
+styles.css          | styles        | 96 bytes |
+
+                    | Initial total |  2.58 kB
+
+Application bundle generation complete. [14.193 seconds] - 2026-03-17T04:13:08.614Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+
+----------------------
+
+ng generate component header
+ng g c header
+ng g c components/header
+
+
+chrome angular dev tools extenstion
+
+
+npm install zone.js
+
+in main.ts file include
+import 'zone.js';
+-----------------------------------------------
+In angular.json file
+ "projects": {
+    "first-ng-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "style": "scss"
+        }
+      },
+
+If these settings are removed then 
+ng g c header
+will create the following files
+header.component.html
+header.component.ts
+header.component.scss
+header.component.spec.ts
+
+creates home component outside of components folder
+ng g c home
+
+ng g c components/greeting
+Home Component uses Greeting Component
+
+ng g c components/counter
+
+ng g c todos
+All pages can be kept outside of components folder
+
+ng g c components/todo-item
+
+Services:
+=========
+ng g service services/todos
+
+Injectable means that the service can be injected into other places
+Service can be provided in a 
+any single component providers:[TodoService] OR providedIn: 'root', so that service is accessible in all components
+@Injectable({
+  providedIn: 'root',
+})
+
+to use above service in TodoComponent
+todoService = inject(TodosService)
+
+model/todo.type.ts
+
+export type Todo = {
+  userId: number;
+  completed: boolean;
+  title: string;
+  id: number;
+};
+
+In order to use httpClient in app.config.ts file add this
+
+import { provideHttpClient } from '@angular/common/http';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideHttpClient(),
+--------------------------------------------------
+Also, in todos.service.ts file ... add this
+import { HttpClient } from '@angular/common/http';
+http = inject(HttpClient);	
+
+Directives:
+===========
+ng g directive directives/highlight-completed-todo
+
+called control flow blocks
+@if - built-in structural directive
+
+---------------------------------------------
+todo-item.component.ts
+
+  todoClicked() {
+    this.todoToggled.emit(this.todo());
+	
+todo-item.component.html	
+
+<input id="todo-{{ todo().id }}" type="checkbox" 
+[checked]="todo().completed" (change)="this.todoClicked()" />
+
+todos.component.html
+
+<app-todo-item (todoToggled)="updateTodoItem($event)" [todo]="todo" />
+
+todos.component.ts
+
+  updateTodoItem(todoItem: Todo) {
+    this.todoItems.update((todos) => {
+      return todos.map((todo) => {
+        if (todo.id === todoItem.id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      });
+    });
+  }
+ ---------------------------------------------
+ Explanation:
+ ============
+ 👉 Parent ↔ Child communication + Signals + Output event
+ 
+ ⭐ Overall What This Code Does
+
+👉 When user clicks checkbox in child component
+
+➡ Child sends event to parent
+➡ Parent updates todo list state
+➡ UI refreshes automatically
+
+
+ ---------------------------------------------
+ 
+ 
+ Pipes:
+ =====
+ 
+ ng g pipe pipes/filter-todos
+ 
+ for using ngModel - import FormsModule
+ 
+ todos.component.html
+ 
+  <input
+    name="searchTerm"
+    [(ngModel)]="searchTerm"
+    placeholder="Search todos..."
+  />
+  
+  
+  E-COMMERCE APPLICATION:
+  ======================
+  https://youtu.be/zcGKhFzCvbU
+  https://github.com/CodeFisrt/angular20Tutorial
+  
+  ng new ecommerceapp
+  ----------------------------------------------
+  
+E:\ANGULAR-CRASH-COURSE>ng new ecommerceapp
+√ Which stylesheet system would you like to use? CSS             [ https://developer.mozilla.org/docs/Web/CSS
+          ]
+√ Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
+√ Which AI tools do you want to configure with Angular best practices? https://angular.dev/ai/develop-with-ai None,
+Gemini         [ https://ai.google.dev/gemini-api/docs                            ]
+CREATE ecommerceapp/.prettierrc (173 bytes)
+CREATE ecommerceapp/angular.json (1994 bytes)
+CREATE ecommerceapp/package.json (787 bytes)
+CREATE ecommerceapp/README.md (1524 bytes)
+CREATE ecommerceapp/tsconfig.json (990 bytes)
+CREATE ecommerceapp/.editorconfig (331 bytes)
+CREATE ecommerceapp/.gitignore (666 bytes)
+CREATE ecommerceapp/tsconfig.app.json (444 bytes)
+CREATE ecommerceapp/tsconfig.spec.json (456 bytes)
+CREATE ecommerceapp/.vscode/extensions.json (134 bytes)
+CREATE ecommerceapp/.vscode/launch.json (490 bytes)
+CREATE ecommerceapp/.vscode/mcp.json (188 bytes)
+CREATE ecommerceapp/.vscode/tasks.json (1020 bytes)
+CREATE ecommerceapp/src/main.ts (228 bytes)
+CREATE ecommerceapp/src/index.html (311 bytes)
+CREATE ecommerceapp/src/styles.css (81 bytes)
+CREATE ecommerceapp/src/app/app.spec.ts (702 bytes)
+CREATE ecommerceapp/src/app/app.ts (306 bytes)
+CREATE ecommerceapp/src/app/app.css (0 bytes)
+CREATE ecommerceapp/src/app/app.html (20488 bytes)
+CREATE ecommerceapp/src/app/app.config.ts (324 bytes)
+CREATE ecommerceapp/src/app/app.routes.ts (80 bytes)
+CREATE ecommerceapp/public/favicon.ico (15086 bytes)
+CREATE ecommerceapp/.gemini/GEMINI.md (2332 bytes)
+- Installing packages (npm)...
+----------------------------------------------
+Bootstrap Installation:
+=======================
+add this in package.json and run npm install
+    "bootstrap": "^5.3.6",
+    "font-awesome": "^4.7.0",
+
+add this in index.html
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	
+add this in angular.json
+
+  "styles": ["./node_modules/bootstrap/dist/css/bootstrap.min.css",
+             "src/styles.css"]
+
+
+Create Checkout Component
+ng g component checkout --standalone
+
+ng g component orders --standalone
+
+
+E:\ANGULAR-CRASH-COURSE\ecommerceapp>ng g component orders --standalone
+CREATE src/app/orders/orders.spec.ts (554 bytes)
+CREATE src/app/orders/orders.ts (197 bytes)
+CREATE src/app/orders/orders.css (0 bytes)
+CREATE src/app/orders/orders.html (22 bytes)
+
+E:\ANGULAR-CRASH-COURSE\ecommerceapp>
+
+
+ng g component orders --standalone --type=component
+
+⭐ Interview Smart Point
+
+✅
+Latest Angular CLI may generate simplified component file names like orders.ts for standalone components, so lazy-loading paths must match the actual generated file name.
+
+SWEETALERT2:
+===========
+npm install sweetalert2
+
+ERROR Toast Example
+error: err => {
+
+  Swal.fire({
+    toast: true,
+    position: 'top-end',
+    icon: 'error',
+    title: 'Payment verification failed',
+    showConfirmButton: false,
+    timer: 3000
+  });
+
+}
+
+
+Swal.fire({
+  icon: 'success',
+  title: 'Order Placed Successfully 🎉',
+  text: 'Your payment was successful',
+  confirmButtonText: 'View Orders'
+}).then(() => {
+  this.router.navigate(['/orders']);
+});
+
+CUSTOM PIPE:
+===========
+Create Custom Pipe
+ng generate pipe pipes/inr
+
+PS E:\ANGULAR-CRASH-COURSE\ecommerceapp> ng generate pipe pipes/inr
+CREATE src/app/pipes/inr-pipe.spec.ts (183 bytes)
+CREATE src/app/pipes/inr-pipe.ts (224 bytes)
+PS E:\ANGULAR-CRASH-COURSE\ecommerceapp> 
+
+
+Spinner:
+=======
+npm install ngx-spinner
+
+import { NgxSpinnerService } from "ngx-spinner";
+
+constructor(private spinner: NgxSpinnerService) {}
+
+this.spinner.show();
+this.spinner.hide();
+
+If loading products list from json file add this in angular.json..."src/assets"
+
+ "assets": [
+		  {
+			"glob": "**/*",
+			"input": "public"
+		  },
+		  "src/assets"
+		],
+create products.json in src/assets folder
+
+TEST:http://localhost:4200/assets/products.json
+data should appear in browser		

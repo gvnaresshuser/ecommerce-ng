@@ -1,0 +1,79 @@
+Microsoft Windows [Version 10.0.26100.6899]
+(c) Microsoft Corporation. All rights reserved.
+
+E:\ANGULAR-CRASH-COURSE\ecommerce-server>npm init -y
+Wrote to E:\ANGULAR-CRASH-COURSE\ecommerce-server\package.json:
+
+{
+  "name": "ecommerce-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
+
+
+
+E:\ANGULAR-CRASH-COURSE\ecommerce-server>
+
+
+npm install express cors pg razorpay
+npm install --save-dev nodemon
+
+create table orders_angular(
+ id serial primary key,
+ total numeric,
+ payment_id text,
+ items jsonb,
+ created_at timestamp default now()
+);
+
+************
+npm run dev
+************
+
+
+RAZORPAY_KEY_SECRET = 'eUO2oYhFEu7XlbzOopp6UYGL'
+RAZORPAY_KEY_ID = 'rzp_test_7loOYJatPLp2HD'
+
+
+RENDER.COM - PostgreSQL
+DATABASE_URL="postgresql://perns_store_87sr_user:0Pd4sW5ZswHLxxyJBKbjUiG2W8nC9MKJ@dpg-d57t6o6r433s73eu4jjg-a.singapore-postgres.render.com/perns_store_87sr?sslmode=require"
+
+----------------------- LATEST RENDER.COM PostgreSQL ---------------------------------
+29-01-2026 - Your database will expire on February 28, 2026. The database will be deleted unless you upgrade to a paid instance type.
+Name:Perns Ecommerce
+Hostname : dpg-d6slnslm5p6s73atcljg-a
+Port : 5432
+Database : perns_store_r9l1
+Username : pern_store_user
+Password : vKYBVwPxADEKfk5ibKG0fieFsSGm2IE2
+Internal Database URL : postgresql://pern_store_user:vKYBVwPxADEKfk5ibKG0fieFsSGm2IE2@dpg-d6slnslm5p6s73atcljg-a/perns_store_r9l1
+External Database URL : postgresql://pern_store_user:vKYBVwPxADEKfk5ibKG0fieFsSGm2IE2@dpg-d6slnslm5p6s73atcljg-a.singapore-postgres.render.com/perns_store_r9l1
+
+DATABASE_URL="postgresql://pern_store_user:vKYBVwPxADEKfk5ibKG0fieFsSGm2IE2@dpg-d6slnslm5p6s73atcljg-a.singapore-postgres.render.com/perns_store_r9l1?sslmode=require"
+----------------------- LATEST RENDER.COM PostgreSQL ---------------------------------
+
+IN PG ADMIN TOOL
+General: Name : Perns Ecommerce
+Password : vKYBVwPxADEKfk5ibKG0fieFsSGm2IE2
+Host name / address : dpg-d6slnslm5p6s73atcljg-a.singapore-postgres.render.com
+Maintenance Database : perns_store_r9l1
+Username : pern_store_user
+
+
+render.com
+google login
+gvnaressh@gmail.com
+
+
+
+
+
+
