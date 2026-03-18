@@ -13,14 +13,47 @@ git remote add origin https://github.com/gvnaresshuser/ecommerce-ng.git
 git push -u origin main
 
 
-
+git add .
+git commit -m "added vercel.json"
 git branch -M main
 git remote add origin https://github.com/gvnaresshuser/ecommerce-ng.git
 git push -u origin main
 
+
+---------------------------------------*
+IF WE ADD OR MODIFY NEW OR EXISTING FILES JUST DO THIS AND CHANGE THE MESSAGE
+git add .
+git commit -m "added vercel.json"
+git push -u origin main
+---------------------------------------*
+
 Done 🎉
 
 Now GitHub will show:
+
+E:\ANGULAR-CRASH-COURSE\ecommerce-server>vercel
+? Set up and deploy “E:\ANGULAR-CRASH-COURSE\ecommerce-server”? yes
+? Which scope should contain your project? gocart's projects
+? Found project “gocarts-projects-cfc6dde7/ecommerce-server”. Link to it? yes
+🔗  Linked to gocarts-projects-cfc6dde7/ecommerce-server (created .vercel and added it to .gitignore)
+? Would you like to pull environment variables now? yes
+> Downloading `development` Environment Variables for gocarts-projects-cfc6dde7/ecommerce-server
+✅  Created .env.local file and added it to .gitignore [288ms]
+🔍  Inspect: https://vercel.com/gocarts-projects-cfc6dde7/ecommerce-server/E4tGQsCGAttJ1Ji9Pmq5MU5f36Kn [3s]
+✅  Preview: https://ecommerce-server-f1d8t849f-gocarts-projects-cfc6dde7.vercel.app [17s]
+📝  To deploy to production (ecommerce-server-five-eosin.vercel.app), run `vercel --prod`
+
+E:\ANGULAR-CRASH-COURSE\ecommerce-server>
+===================================================================================================
+
+vercel --prod
+
+E:\ANGULAR-CRASH-COURSE\ecommerce-server>vercel --prod
+🔍  Inspect: https://vercel.com/gocarts-projects-cfc6dde7/ecommerce-server/DBstuJvt5nmPKGws7DatcYse4k3c [2s]
+✅  Production: https://ecommerce-server-p7ixysqon-gocarts-projects-cfc6dde7.vercel.app [17s]
+🔗  Aliased: https://ecommerce-server-five-eosin.vercel.app [17s]
+
+E:\ANGULAR-CRASH-COURSE\ecommerce-server>
 ===================================================================================================
 ✅ STEP 1 — Install Vercel CLI
 Open terminal
